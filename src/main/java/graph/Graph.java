@@ -7,7 +7,7 @@ public abstract class Graph {
     protected int v;
     protected LinkedList<Integer>[] adjArr;
 
-    public Graph(int v) {
+    Graph(int v) {
         this.v = v;
         adjArr = new LinkedList[v];
 
@@ -18,12 +18,13 @@ public abstract class Graph {
 
     public void printGraph() {
         for (int i = 0; i < adjArr.length; i++) {
-            System.out.println("Adjacency list of vertex" + i);
+            System.out.println("Adjacency list of vertex " + i);
             System.out.print("head ");
             for (Integer index :
                     adjArr[i]) {
                 System.out.print("-> " + index);
             }
+            System.out.println();
         }
     }
 
