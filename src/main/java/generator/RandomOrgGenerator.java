@@ -4,6 +4,9 @@ import org.random.api.RandomOrgClient;
 
 import java.io.IOException;
 
+/**
+ * Implements random number generation with API from Random.org.
+ */
 public class RandomOrgGenerator extends NumberGenerator {
     private RandomOrgClient generator;
 
@@ -12,6 +15,10 @@ public class RandomOrgGenerator extends NumberGenerator {
     private static final int API_REQUEST_SIZE_UPPER_LIMIT = 10000;
     private static final int API_REQUEST_MAX = 1000000000;
 
+    /**
+     * Initialize the object with API key provided by Random.org
+     * @param apiKey
+     */
     public RandomOrgGenerator(String apiKey) {
         generator = RandomOrgClient.getRandomOrgClient(apiKey);
     }
@@ -40,7 +47,7 @@ public class RandomOrgGenerator extends NumberGenerator {
     }
 
     protected void initialize_generator() throws IOException {
-        return;
+        // no bookkeeping needed
     }
 
 }

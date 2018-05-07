@@ -2,11 +2,18 @@ package graph;
 
 import java.util.LinkedList;
 
+/**
+ * The interface for graph data structure.
+ */
 public abstract class Graph {
 
-    protected int v;
-    protected LinkedList<Integer>[] adjArr;
+    protected int v; // number of vertices in the graph
+    protected LinkedList<Integer>[] adjArr; // use adjacency matrix to represent the graph
 
+    /**
+     *
+     * @param v the size of the graph
+     */
     Graph(int v) {
         this.v = v;
         adjArr = new LinkedList[v];
@@ -16,6 +23,9 @@ public abstract class Graph {
         }
     }
 
+    /**
+     * Print the graph
+     */
     public void printGraph() {
         for (int i = 0; i < adjArr.length; i++) {
             System.out.println("Adjacency list of vertex " + i);
@@ -28,8 +38,18 @@ public abstract class Graph {
         }
     }
 
+    /**
+     * Add edges between two vertices `src` and `dst`. Dependends on the kind of graph
+     * directed or undirected edge may be formed between them.
+     * @param src the starting vertice
+     * @param dst the terminal vertice
+     */
     public abstract void addEdge(int src, int dst);
 
+    /**
+     * Test if the graph is connected.
+     * @return true if the graph is connected; otherwise false
+     */
     public abstract boolean connected();
 
 }

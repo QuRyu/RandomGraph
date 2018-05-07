@@ -8,6 +8,11 @@ public class UndirectedGraph extends Graph {
         super(v);
     }
 
+    /**
+     * Add a undirected edge between two vertices
+     * @param src the starting vertice
+     * @param dst the terminal vertice
+     */
     public void addEdge(int src, int dst) {
         if (!adjArr[src].contains(dst)) {
             adjArr[src].add(dst);
@@ -15,6 +20,10 @@ public class UndirectedGraph extends Graph {
         }
     }
 
+    /**
+     * Implements breadth-first search to test if the graph is connected.
+     * @return true if the graph is connected; otherwise false.
+     */
     public boolean connected() {
         if (v == 0) // an empty graph is trivially connected
             return true;
