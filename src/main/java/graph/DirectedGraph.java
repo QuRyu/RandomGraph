@@ -4,7 +4,8 @@ import java.util.Stack;
 
 public class DirectedGraph extends Graph {
 
-    public DirectedGraph(int v) {
+    // not public so that only GraphGenerator could produce them
+    DirectedGraph(int v) {
         super(v);
     }
 
@@ -14,6 +15,9 @@ public class DirectedGraph extends Graph {
     }
 
     public boolean connected() {
+        if (v == 0)
+            return true;
+
         Variables var = new Variables(this.v);
         findSccs(var);
 

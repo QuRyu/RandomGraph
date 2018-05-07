@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class UndirectedGraph extends Graph {
 
-    public UndirectedGraph(int v) {
+    UndirectedGraph(int v) {
         super(v);
     }
 
@@ -16,6 +16,9 @@ public class UndirectedGraph extends Graph {
     }
 
     public boolean connected() {
+        if (v == 0) // an empty graph is trivially connected
+            return true;
+
         LinkedList<Integer> queue = new LinkedList<Integer>();
         boolean[] visited = new boolean[v];
 
