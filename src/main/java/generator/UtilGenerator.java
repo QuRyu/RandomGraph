@@ -14,7 +14,9 @@ public class UtilGenerator extends NumberGenerator {
     private static final int RANDOMS_SIZE_UPPER_LIMIT = 10000; // the cache size should be no larger than this number
 
     protected int generateGraphSize() throws IOException {
-        return generator.nextInt(GRAPH_SIZE_HIGH);
+        int i = generator.nextInt(GRAPH_SIZE_HIGH);
+        if (i == 0) return generateGraphSize();
+        else return  i;
     }
 
     protected int generateCacheSize() throws IOException {

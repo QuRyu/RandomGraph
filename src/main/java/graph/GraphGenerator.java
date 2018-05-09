@@ -28,7 +28,8 @@ public class GraphGenerator {
 
         }
 
-        for (int k = 0; k < generator.getTotalNumberOfRandomNumbers(); k++) {
+        int n = generator.getTotalNumberOfRandomNumbers()/2;
+        for (int k = 0; k < n; k++) {
             i = generator.getRandomNumber();
             j = generator.getRandomNumber();
             g.addEdge(i, j);

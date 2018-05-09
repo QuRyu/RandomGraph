@@ -8,8 +8,9 @@ import java.io.IOException;
  *
  * Each subclass needs to implement several methods that return random numbers.
  */
+// TODO: 5/9/18 Find probability of different sizes of graph and number of edges
 public abstract class NumberGenerator {
-    protected static final int GRAPH_SIZE_HIGH = 10000; // the upper limit of the graph size
+    protected static final int GRAPH_SIZE_HIGH = 1000; // the upper limit of the graph size
     protected static final int GRAPH_SIZE_LOW = 1; // the lower limit of the graph size
 
     protected int randoms[]; // the cache for random numbers
