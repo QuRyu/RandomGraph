@@ -13,14 +13,22 @@ public class UtilGenerator extends NumberGenerator {
 
     private static final int RANDOMS_SIZE_UPPER_LIMIT = 10000; // the cache size should be no larger than this number
 
+    private int graphSizeHigh;
+    private int edgeSizeHigh;
+
+    public UtilGenerator(int graphSizeHigh, int edgesSizeHigh) {
+        this.graphSizeHigh = graphSizeHigh;
+        this.edgeSizeHigh = edgesSizeHigh;
+    }
+
     protected int generateGraphSize() throws IOException {
-        int i = generator.nextInt(GRAPH_SIZE_HIGH);
+        int i = generator.nextInt(graphSizeHigh);
         if (i == 0) return generateGraphSize();
         else return  i;
     }
 
     protected int generateCacheSize() throws IOException {
-        return generator.nextInt(10000);
+        return generator.nextInt(edgeSizeHigh);
     }
 
     protected int getRandomsUpperLimit() throws IOException {

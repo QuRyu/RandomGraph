@@ -11,8 +11,8 @@ public class UtilGeneratorTest {
 
     @Before
     public void setup() throws IOException {
-        generator = new UtilGenerator();
-        generator.initialize();
+//        generator = new UtilGenerator();
+//        generator.initialize();
     }
 
     @Test
@@ -20,7 +20,6 @@ public class UtilGeneratorTest {
         System.out.println("Total number of random numbers to be generated: " + generator.getTotalNumberOfRandomNumbers());
         for (int i = 0; i < generator.getTotalNumberOfRandomNumbers(); i++) {
             System.out.print(generator.getRandomNumber() + " ");
-            // TODO: 5/7/18 why is it zero?
 
         }
     }
