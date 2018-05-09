@@ -15,6 +15,11 @@ public class Driver {
         analyse(sizes);
     }
 
+    /**
+     * The method for generating random graphs and collecting the data
+     * @param sizes different combination of graph size and edge size
+     * @throws IOException
+     */
     private static void analyse(int[][] sizes) throws IOException {
         for (int i = 0; i < sizes.length; i++) { // 0 is the graph size, 1 is the edges size
             NumberGenerator nGenerator = new UtilGenerator(sizes[i][0], sizes[i][1]);
@@ -42,6 +47,13 @@ public class Driver {
 
     }
 
+    /**
+     * Producing random graphs
+     * @param gGenerator the random graph generator
+     * @param connected data structure to store the connectivity of each graph
+     * @param kind the graph kind
+     * @throws IOException
+     */
     private static void mkGraphs(GraphGenerator gGenerator,
                           boolean[] connected, GraphKind kind) throws IOException {
         Graph g;
@@ -52,6 +64,11 @@ public class Driver {
         }
     }
 
+    /**
+     * A fold-like method to calculate the percentage of connectivity
+     * @param connected data structure to store the connectivity of each graph
+     * @return the percentage of connectivity
+     */
     private static double collect(boolean[] connected) {
         int numConnected = 0;
 
@@ -62,6 +79,11 @@ public class Driver {
         return (numConnected / 1.0) / connected.length * 100;
     }
 
+    /**
+     * A fold-like method to calculate the probability of connectivity
+     * @param stats data structure to store percentage of connectivity of graphs generated in each round
+     * @return the probability of connectivity
+     */
     private static double collect(double[] stats) {
         double total = 0.0;
 

@@ -4,13 +4,26 @@ import generator.NumberGenerator;
 
 import java.io.IOException;
 
+/**
+ * A generator for graphs based on the number generator.
+ */
 public class GraphGenerator {
     private NumberGenerator generator;
 
+    /**
+     * The constructor.
+     * @param generator number generator
+     */
     public GraphGenerator(NumberGenerator generator) {
         this.generator = generator;
     }
 
+    /**
+     * generate a random graph
+     * @param kind the graph kind
+     * @return a random graph of the specified kind
+     * @throws IOException
+     */
     public Graph generateGraph(GraphKind kind) throws IOException {
         generator.initialize();
         int i, j;
